@@ -20,11 +20,13 @@ mount c c:\path\to\directory
 cd c:
 calc2.com
 Verify the result and take a screenshot.
-Task 2: Interpreter Enhancement
-Objective
+
+## Task 2: Interpreter Enhancement
+
+## Objective
 Update an interpreter to support multiplication, division, and parentheses.
 
-Instructions
+## Instructions
 Update Lexer: Add support for MUL, DIV, LPAREN, RPAREN.
 Modify Parser: Handle multiplication, division, and parentheses.
 Update Interpreter: Process new operations.
