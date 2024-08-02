@@ -32,45 +32,61 @@ Update Lexer: Add support for MUL, DIV, LPAREN, RPAREN.
 Modify Parser: Handle multiplication, division, and parentheses.
 Update Interpreter: Process new operations.
 __________________________________________________________________________________________________________________________________________________________________________________________________________________________________
-To compile an assembly program using NASM (Netwide Assembler) and create a .COM executable, follow these steps:
 
-1. Install NASM
-Ensure you have NASM installed. You can download it from the NASM official website or install it using a package manager if you’re on Linux.
+To compile an assembly program using NASM (Netwide Assembler) and create a .COM executable, please follow these steps:
 
-2. Write Your Assembly Code
-Save your assembly code to a file, e.g., calc2.asm.
+0. Install NASM & DOSBox
+   
+1.	Save the below assembly code in a file named calc2.asm.
 
-3. Compile the Code
-Use NASM to compile the assembly code into a binary .COM file. Open your command line interface (Terminal on Linux/macOS, Command Prompt or PowerShell on Windows) and navigate to the directory where your calc2.asm file is located.
-
-Run the following command:
-
+2.	 Compile the file using NASM:
+a)	navigate to the directory containing the file:
+cd C:\1
+b)	Compile the file:
 nasm -f bin -o calc2.com calc2.asm
-Here's what each part of the command means:
+c)	Ensure that the calc2.com file is in C:\1 and does not have a .txt or any other unwanted extension.
 
-nasm: The command to run the NASM assembler.
--f bin: Specifies the output format as a raw binary file (which is suitable for .COM files).
--o calc2.com: The output file name.
-calc2.asm: The input file containing your assembly code.
-
-4. Run the Program
-Open DOSBox:
-
-DOSBox is an emulator for running DOS applications. If you don’t have DOSBox installed, download and install it from the DOSBox website.
-Mount the Directory:
-
-In DOSBox, mount the directory where calc2.com is located as a virtual drive.
-For example:
-mount c c:\path\to\directory
-Replace c:\path\to\directory with the actual path to your directory.
-Change to the Mounted Drive:
-
-Switch to the mounted drive:
+3.	Open DOSBox.
+a)	mount the directory:
+mount c c:\1
+b)	switch to the virtual disk:
 c:
-Run the Program:
-
-Execute the program:
+c)	run the program:
 calc2.com
+
+4.	Take a screenshot of the program's output.
+
+org 0x100                ; Indicate that this is a .COM program
+
+section .data
+    a db 5               ; Define a = 5
+    b db 3               ; Define b = 3
+    c db 2               ; Define c = 2
+    resultMsg db 'Result: $' ; Define string for result message
+
+section .text
+_start:
+    mov al, [b]          ; Load b into AL
+    sub al, [c]          ; Subtract c from AL
+    add al, [a]          ; Add a to AL
+
+    ; Convert result to ASCII (for single-digit numbers)
+    add al, 30h          ; Convert number to ASCII character
+
+    ; Print result message
+    mov ah, 09h          ; DOS function to print string
+    lea dx, resultMsg    ; Load address of resultMsg into DX
+    int 21h              ; Call DOS interrupt
+
+    ; Print result
+    mov dl, al           ; Load result into DL for output
+    mov ah, 02h          ; DOS function to print character
+    int 21h              ; Call DOS interrupt
+
+    ; Exit program
+    mov ax, 4c00h        ; DOS function to exit program
+    int 21h              ; Call DOS interrupt
+
 
 Run Interpreter
 python main.py
