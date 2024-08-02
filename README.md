@@ -59,23 +59,20 @@ Open DOSBox:
 DOSBox is an emulator for running DOS applications. If you don’t have DOSBox installed, download and install it from the DOSBox website.
 Mount the Directory:
 
-In DOSBox, mount the directory where calc2.com is located as a virtual drive. For example:
-   ```bash
+In DOSBox, mount the directory where calc2.com is located as a virtual drive.
+For example:
 mount c c:\path\to\directory
 Replace c:\path\to\directory with the actual path to your directory.
 Change to the Mounted Drive:
 
 Switch to the mounted drive:
-   ```bash
 c:
 Run the Program:
 
 Execute the program:
-   ```bash
 calc2.com
 
 Run Interpreter
-   ```bash
 python main.py
 Verify
 Test expressions with multiplication, division, and parentheses.
