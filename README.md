@@ -40,6 +40,7 @@ To compile an assembly program using NASM (Netwide Assembler) and create a .COM 
 1.	Save the below assembly code in a file named calc2.asm.
 
 2.	 Compile the file using NASM:
+   
 a)	navigate to the directory containing the file:
 cd C:\1
 
@@ -48,15 +49,18 @@ nasm -f bin -o calc2.com calc2.asm
 
 c)	Ensure that the calc2.com file is in C:\1 and does not have a .txt or any other unwanted extension.
 
-4.	Open DOSBox.
+3.	Open DOSBox.
+   
 a)	mount the directory:
 mount c c:\1
+
 b)	switch to the virtual disk:
 c:
+
 c)	run the program:
 calc2.com
 
-5.	Take a screenshot of the program's output.
+4.	Take a screenshot of the program's output.
 
 ```bash
 org 0x100                ; Indicate that this is a .COM program
