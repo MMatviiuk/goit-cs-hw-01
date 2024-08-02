@@ -56,6 +56,7 @@ calc2.com
 
 4.	Take a screenshot of the program's output.
 
+```bash
 org 0x100                ; Indicate that this is a .COM program
 
 section .data
@@ -86,7 +87,7 @@ _start:
     ; Exit program
     mov ax, 4c00h        ; DOS function to exit program
     int 21h              ; Call DOS interrupt
-
+```
 
 Run Interpreter
 python main.py
