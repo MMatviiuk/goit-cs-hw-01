@@ -24,10 +24,10 @@ Verify the result and take a screenshot.
 
 ## Task 2: Interpreter Enhancement
 
-## Objective
+### Objective
 Update an interpreter to support multiplication, division, and parentheses.
 
-## Instructions
+### Instructions
 Update Lexer: Add support for MUL, DIV, LPAREN, RPAREN.
 Modify Parser: Handle multiplication, division, and parentheses.
 Update Interpreter: Process new operations.
