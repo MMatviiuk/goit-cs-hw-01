@@ -45,7 +45,6 @@ Use NASM to compile the assembly code into a binary .COM file. Open your command
 
 Run the following command:
 
-   ```bash
 nasm -f bin -o calc2.com calc2.asm
 Here's what each part of the command means:
 
