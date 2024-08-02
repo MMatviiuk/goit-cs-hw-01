@@ -14,6 +14,7 @@ Modify an assembly program to calculate `b - c + a`.
 1. **Compile**:
    ```bash
    nasm -f bin -o calc2.com calc2.asm
+   ```
 Run in DOSBox:
 bash
 mount c c:\path\to\directory
