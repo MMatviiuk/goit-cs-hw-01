@@ -44,7 +44,7 @@ Use NASM to compile the assembly code into a binary .COM file. Open your command
 
 Run the following command:
 
-```bash
+   ```bash
 nasm -f bin -o calc2.com calc2.asm
 Here's what each part of the command means:
 
@@ -60,22 +60,22 @@ DOSBox is an emulator for running DOS applications. If you don’t have DOSBox i
 Mount the Directory:
 
 In DOSBox, mount the directory where calc2.com is located as a virtual drive. For example:
-```bash
+   ```bash
 mount c c:\path\to\directory
 Replace c:\path\to\directory with the actual path to your directory.
 Change to the Mounted Drive:
 
 Switch to the mounted drive:
-```bash
+   ```bash
 c:
 Run the Program:
 
 Execute the program:
-```bash
+   ```bash
 calc2.com
 
 Run Interpreter
-```bash
+   ```bash
 python main.py
 Verify
 Test expressions with multiplication, division, and parentheses.
